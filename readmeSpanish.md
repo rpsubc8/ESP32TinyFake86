@@ -68,9 +68,13 @@ Al usar el modo de video fijo de 320x200, se monstrará sólo 40x25, es decir, 8
 
 <br><br>
 <h1>COM</h1>
-En cualquier momento se puede cargar un juego .COM, de 64 KB. Dato que copian los datos a RAM y se hace un salto al código, lo ideal, es cargar desde el OSD un COM cuando está arrancando el emulador, es decir, durante el test de memoria. Si se hace después, como por ejemplo
+En cualquier momento se puede cargar un juego .COM, de 64 KB. Dato que copian los datos a RAM y se hace un salto al código, lo ideal, es cargar desde el OSD un COM cuando está arrancando el emulador, es decir, durante el test de memoria.
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewBoot.gif'></center>
+Si se hace después, por ejemplo, cuando ya está el Sistema Operativo, el COM usará todas las interrupciones y los timers que haya cambiado el propio software.
 
 
 <br><br>
 <h1>BASIC ROM</h1>
-Después del test de RAM, se puede arrancar el BASIC de ROM, pulsando la barra especiadora. Si no se pulsar, se procederá al arranque del BOOTSTRAP, es decir, del disquete.
+Después del test de RAM, se puede arrancar el BASIC de ROM, pulsando la barra especiadora.
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewBASIC.gif'></center>
+Si no se pulsa, se procederá al arranque del BOOTSTRAP, es decir, del disquete.
