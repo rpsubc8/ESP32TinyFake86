@@ -68,7 +68,7 @@ Al usar el modo de video fijo de 320x200, se monstrará sólo 40x25, es decir, 8
 
 <br><br>
 <h1>COM</h1>
-En cualquier momento se puede cargar un juego .COM, de 64 KB. Dato que copian los datos a RAM y se hace un salto al código, lo ideal, es cargar desde el OSD un COM cuando está arrancando el emulador, es decir, durante el test de memoria.
+En cualquier momento se puede cargar un juego .COM, de 64 KB. Dado que se copian los datos a RAM y se hace un salto al código, lo ideal, es cargar desde el OSD un COM cuando está arrancando el emulador, es decir, durante el test de memoria.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewBoot.gif'></center>
 Si se hace después, por ejemplo, cuando ya está el Sistema Operativo, el COM usará todas las interrupciones y los timers que haya cambiado el propio software.
 
