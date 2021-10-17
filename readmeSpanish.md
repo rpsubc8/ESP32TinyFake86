@@ -58,3 +58,9 @@ Tan sólo tenemos que abrir el <b>fairChild.ino</b> del directorio <b>fairChild<
 Para el modo normal, ya está preparado el proyecto, de forma que no se necesita ninguna librería. 
 Debemos desactivar la opción de PSRAM, y en caso de superar 1 MB de binario, seleccionar 4 MB de partición a la hora de subir. Aunque el código no use PSRAM, si la opción está activa y nuestro ESP32 no dispone de ella, se generará una excepción y reinicio del mismo en modo bucle.
 
+
+
+<br><br>
+<h1>Paku Paku</h1>
+El juego usa el modo de video CGA 160x100, que es un modo de texto CGA, donde sólo se dibujan 2 lineas del caracter 221 y 222, saltándose el bit especial 7 de background, para lograr los 16 colores de fondo, así como primer plano.
+Al usar el modo de video fijo de 320x200, se monstrará sólo 40x25, es decir, 80x100. Por tanto desde el menú del OSD, debemos elegir font 4x8, para que nos muestre la pantalla completa 80x25, es decir, 160x100, en reducción de escalado.
