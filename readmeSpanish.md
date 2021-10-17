@@ -78,3 +78,11 @@ Si se hace después, por ejemplo, cuando ya está el Sistema Operativo, el COM u
 Después del test de RAM, se puede arrancar el BASIC de ROM, pulsando la barra especiadora.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewBASIC.gif'></center>
 Si no se pulsa, se procederá al arranque del BOOTSTRAP, es decir, del disquete.
+
+
+
+<br><br>
+<h1>Timers</h1>
+Cuando un juego nos vaya muy rápido, podemos reducir la velocidad desde el OSD, cambiando el timer poll en milisegundos y añadiendo un delay CPU en milisegundos.
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewDigger.gif'></center>
+
