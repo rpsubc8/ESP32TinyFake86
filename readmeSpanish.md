@@ -18,8 +18,8 @@ He realizado varias modificaciones:
  <li>No se requiere la libreria de bitluni completa. He reducido a lo mínimo, ahorrando RAM y FLASH, basado en la librería de Ricardo Massaro</li>
  <li>Soporte modo texto 80x25</li>
  <li>Soporte modo texto 40x25</li>
- <li>Soporte modo video 320x200 2bpp</li>
- <li>Soporte modo video 640x200 1bpp</li>
+ <li>Soporte modo video 4 y 5, 320x200 2bpp</li>
+ <li>Soporte modo video 6, 640x200 1bpp</li>
  <li>Soporte modo texto 160x100 (Paku Paku)</li>
  <li>Al usar sólo SRAM, para esta versión de test se ha dejado sólo emular 160 KB (163840 bytes)</li>
 </ul> 
