@@ -62,7 +62,7 @@ Debemos desactivar la opción de PSRAM, y en caso de superar 1 MB de binario, se
 
 <br><br>
 <h1>Paku Paku</h1>
-El juego usa el modo de video CGA 160x100, que es un modo de texto CGA, donde sólo se dibujan 2 lineas del caracter 221 y 222, saltándose el bit especial 7 de background, para lograr los 16 colores de fondo, así como primer plano.
+El juego usa el modo de video CGA 160x100, que es un modo de texto CGA, donde sólo se dibujan 2 lineas del caracter 221 y 222, saltándose el bit especial 7 de background (parpadeo), para lograr los 16 colores de fondo, así como primer plano.
 Al usar el modo de video fijo de 320x200, se monstrará sólo 40x25, es decir, 80x100. Por tanto desde el menú del OSD, debemos elegir font 4x8, para que nos muestre la pantalla completa 80x25, es decir, 160x100, en reducción de escalado.
 
 
