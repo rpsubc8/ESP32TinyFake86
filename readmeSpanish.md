@@ -64,3 +64,13 @@ Debemos desactivar la opción de PSRAM, y en caso de superar 1 MB de binario, se
 <h1>Paku Paku</h1>
 El juego usa el modo de video CGA 160x100, que es un modo de texto CGA, donde sólo se dibujan 2 lineas del caracter 221 y 222, saltándose el bit especial 7 de background, para lograr los 16 colores de fondo, así como primer plano.
 Al usar el modo de video fijo de 320x200, se monstrará sólo 40x25, es decir, 80x100. Por tanto desde el menú del OSD, debemos elegir font 4x8, para que nos muestre la pantalla completa 80x25, es decir, 160x100, en reducción de escalado.
+
+
+<br><br>
+<h1>COM</h1>
+En cualquier momento se puede cargar un juego .COM, de 64 KB. Dato que copian los datos a RAM y se hace un salto al código, lo ideal, es cargar desde el OSD un COM cuando está arrancando el emulador, es decir, durante el test de memoria. Si se hace después, como por ejemplo
+
+
+<br><br>
+<h1>BASIC ROM</h1>
+Después del test de RAM, se puede arrancar el BASIC de ROM, pulsando la barra especiadora. Si no se pulsar, se procederá al arranque del BOOTSTRAP, es decir, del disquete.
