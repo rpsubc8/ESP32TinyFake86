@@ -22,6 +22,7 @@ He realizado varias modificaciones:
  <li>Soporte modo video 6, 640x200 1bpp</li>
  <li>Soporte modo texto 160x100 (Paku Paku)</li>
  <li>Al usar sólo SRAM, para esta versión de test se ha dejado sólo emular 160 KB (163840 bytes)</li>
+ <li>El OSD se saca con la tecla <b>F12</b></li>
 </ul> 
 
 
