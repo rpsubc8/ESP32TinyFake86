@@ -1,0 +1,11 @@
+*~
+.DS_Store
+!.keep
+.pioenvs/
+.pio/
+.clang_complete
+.gcc-flags.json
+/work
+.piolibdeps/
+.vscode
+
