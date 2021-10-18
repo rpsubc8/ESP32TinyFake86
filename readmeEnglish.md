@@ -4,7 +4,7 @@ Port of the Fake86 emulator (Mike Chambers) to the TTGO VGA32 v1.0, v1.1, v1.2 a
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/pakupaku.gif'></center>.
 I have made several modifications:
 <ul>
- <li>Ported from x86 PC to ESP32</li>.
+ <li>Ported from x86 PC to ESP32</li>
  <li>No PSRAM used, running on ESP32 with 520 KB RAM (TTGO VGA32 v1.x)</li> 
  <li>Single core usage (possibility of 2)</li>
  <li>Low-resource OSD</li>
@@ -13,7 +13,7 @@ I have made several modifications:
  <li>It can use any digital pin for the audio (SPEAKER_PIN in hardware.h)</li>
  <li>Any digital pin can be used for the video (hardware.h)</li> 
  <li>Emulation video speed menu, VGA, keyboard</li>
- <li>Menu of emulation video speed, VGA, keyboard</li>.
+ <li>Menu of emulation video speed, VGA, keyboard</li>
  <li>Support for 64 color mode</li>.    
  <li>VGA 320x200</li>
  <li>The full bitluni library is not required. I have reduced to the minimum, saving RAM and FLASH, based on Ricardo Massaro's library</li>.
