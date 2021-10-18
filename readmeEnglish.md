@@ -14,12 +14,12 @@ I have made several modifications:
  <li>Any digital pin can be used for the video (hardware.h)</li> 
  <li>Emulation video speed menu, VGA, keyboard</li>
  <li>Menu of emulation video speed, VGA, keyboard</li>
- <li>Support for 64 color mode</li>.    
+ <li>Support for 64 color mode</li> 
  <li>VGA 320x200</li>
- <li>The full bitluni library is not required. I have reduced to the minimum, saving RAM and FLASH, based on Ricardo Massaro's library</li>.
+ <li>The full bitluni library is not required. I have reduced to the minimum, saving RAM and FLASH, based on Ricardo Massaro's library</li>
  <li>Text mode support 80x25</li>
  <li>Text mode 40x25</li>
- <li>Support text mode 40x25</li>.
+ <li>Support text mode 40x25</li>
  <li>Support video mode 4 and 5, 320x200 2bpp</li>
  <li>Mode video support 4 and 5, 320x200 2bpp</li>
  <li>Video mode 6, 640x200 1bpp</li> <li>Support video mode 6, 640x200 1bpp</li>
