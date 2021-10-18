@@ -46,7 +46,7 @@ The attached image is of my TTGO VGA32 v1.2 board without psram and SD module.
 <br><br>
 <h1>PlatformIO</h1>
 PLATFORMIO 2.2.0 must be installed from the Visual Studio extensions.
-<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFairChild/main/preview/previewPlatformIOinstall.gif'></center>
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewPlatformIOinstall.gif'></center>
 Then select the working directory <b>Tinyfake86ttgovga32</b>.
 We must modify the file <b>platformio.ini</b> the option <b>upload_port</b> to select the COM port where we have our TTGO VGA32 board.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewPlatformIO.gif'></center>
@@ -57,7 +57,7 @@ It's all set up so we don't have to install any libraries.
 <br><br>
 <h1>Arduino IDE</h1>
 The whole project is compatible with the Arduino 1.8.11 framework.
-We just need to open the <b>fairChild.ino</b> in the <b>fairChild</b> directory.
+We just need to open the <b>fake86.ino</b> in the <b>fairChild</b> directory.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewArduinoIDEpreferences.gif'></center>
 For normal mode, the project is already prepared, so no library is needed. 
 We must disable the PSRAM option, and in case of exceeding 1 MB of binary, select 4 MB partition at upload time. Although the code does not use PSRAM, if the option is active and our ESP32 does not have it, an exception will be generated and it will restart in loop mode.
@@ -65,7 +65,7 @@ We must disable the PSRAM option, and in case of exceeding 1 MB of binary, selec
 
 
 <br><br>
-<h1>Paku Paku</h1>.
+<h1>Paku Paku</h1>
 The game uses CGA 160x100 video mode, which is a CGA text mode, where only 2 lines of character 221 and 222 are drawn, skipping the special background bit 7 (flicker), to achieve the 16 background colors, as well as foreground.
 When using the 320x200 fixed video mode, only 40x25 will be displayed, i.e. 80x100. Therefore from the OSD menu, we must choose font 4x8, to show us the full screen 80x25, i.e. 160x100, in scaling reduction.
 
@@ -78,7 +78,7 @@ If this is done later, e.g. when the OS is already up, the COM will use all inte
 
 
 <br><br>
-<h1>BASIC ROM</h1>.
+<h1>BASIC ROM</h1>
 After the RAM test, the ROM BASIC can be started by pressing the specifier bar.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewBASIC.gif'></center>
 If it is not pressed, the BOOTSTRAP, i.e. the floppy disk, will be booted.
@@ -86,6 +86,6 @@ If it is not pressed, the BOOTSTRAP, i.e. the floppy disk, will be booted.
 
 
 <br><br>
-<h1>Timers</h1>.
+<h1>Timers</h1>
 When a game is running too fast, we can reduce the speed from the OSD by changing the poll timer in milliseconds and adding a CPU delay in milliseconds.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewDigger.gif'></center>
