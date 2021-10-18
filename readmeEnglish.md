@@ -24,14 +24,14 @@ I have made several modifications:
  <li>Mode video support 4 and 5, 320x200 2bpp</li>
  <li>Video mode 6, 640x200 1bpp</li> <li>Support video mode 6, 640x200 1bpp</li>
  <li>Soporte modo texto 160x100 (Paku Paku)</li>
- <li>Al usar sólo SRAM, para esta versión de test se ha dejado sólo emular 160 KB (163840 bytes)</li>
- <li>El OSD se saca con la tecla <b>F12</b></li>
+ <li>Since only SRAM is used, for this test version only 160 KB (163840 bytes) have been left for emulation.</li>
+ <li>The OSD can be removed by pressing the <b>F12</b></li>
 </ul> 
 
 
 <br><br>
-<h1>Requerimientos</h1>
-Se requiere:
+<h1>Requirements</h1>
+Required:
  <ul>
   <li>TTGO VGA32 v1.x (1.0, 1.1, 1.2, 1.4) o Single core ESP32</li>
   <li>Visual Studio 1.48.1 PLATFORMIO 2.2.0</li>
@@ -39,16 +39,16 @@ Se requiere:
   <li>Arduino IDE 1.8.11</li>
  </ul>
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/ttgovga32v12.jpg'></center>
-La imagen adjunta es de mi placa TTGO VGA32 v1.2 sin psram ni módulo de SD.
+The attached image is of my TTGO VGA32 v1.2 board without psram and SD module.
 <br>
 
 
 <br><br>
 <h1>PlatformIO</h1>
-Se debe instalar el PLATFORMIO 2.2.0 desde las extensiones del Visual Studio.
+PLATFORMIO 2.2.0 must be installed from the Visual Studio extensions.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFairChild/main/preview/previewPlatformIOinstall.gif'></center>
-Luego se seleccionará el directorio de trabajo <b>Tinyfake86ttgovga32</b>.
-Debemos modificar el fichero <b>platformio.ini</b> la opción <b>upload_port</b> para seleccionar el puerto COM donde tenemos nuestra placa TTGO VGA32.
+Then select the working directory <b>Tinyfake86ttgovga32</b>.
+We must modify the file <b>platformio.ini</b> the option <b>upload_port</b> to select the COM port where we have our TTGO VGA32 board.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewPlatformIO.gif'></center>
 Then we will proceed to compile and upload to the board. No partitions are used, so we must upload the entire compiled binary.
 It's all set up so we don't have to install any libraries.
