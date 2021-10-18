@@ -1,7 +1,7 @@
 # Fake86
 Port of the Fake86 emulator (Mike Chambers) to the TTGO VGA32 v1.0, v1.1, v1.2 and v1.4 board with ESP32.
 <br>
-<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/pakupaku.gif'></center>.
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/pakupaku.gif'></center>
 I have made several modifications:
 <ul>
  <li>Ported from x86 PC to ESP32</li>
