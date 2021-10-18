@@ -57,7 +57,7 @@ It's all set up so we don't have to install any libraries.
 <br><br>
 <h1>Arduino IDE</h1>
 The whole project is compatible with the Arduino 1.8.11 framework.
-We just need to open the <b>fake86.ino</b> in the <b>fairChild</b> directory.
+We just need to open the <b>fake86.ino</b> in the <b>fake86</b> directory.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewArduinoIDEpreferences.gif'></center>
 For normal mode, the project is already prepared, so no library is needed. 
 We must disable the PSRAM option, and in case of exceeding 1 MB of binary, select 4 MB partition at upload time. Although the code does not use PSRAM, if the option is active and our ESP32 does not have it, an exception will be generated and it will restart in loop mode.
