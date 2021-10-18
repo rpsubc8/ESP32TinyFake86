@@ -89,7 +89,3 @@ If it is not pressed, the BOOTSTRAP, i.e. the floppy disk, will be booted.
 <h1>Timers</h1>.
 When a game is running too fast, we can reduce the speed from the OSD by changing the poll timer in milliseconds and adding a CPU delay in milliseconds.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewDigger.gif'></center>
-
-
-
-Translated with www.DeepL.com/Translator (free version)
