@@ -43,7 +43,7 @@ La imagen adjunta es de mi placa TTGO VGA32 v1.2 sin psram ni módulo de SD.
 <br><br>
 <h1>PlatformIO</h1>
 Se debe instalar el PLATFORMIO 2.2.0 desde las extensiones del Visual Studio.
-<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFairChild/main/preview/previewPlatformIOinstall.gif'></center>
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewPlatformIOinstall.gif'></center>
 Luego se seleccionará el directorio de trabajo <b>Tinyfake86ttgovga32</b>.
 Debemos modificar el fichero <b>platformio.ini</b> la opción <b>upload_port</b> para seleccionar el puerto COM donde tenemos nuestra placa TTGO VGA32.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewPlatformIO.gif'></center>
@@ -54,7 +54,7 @@ Está todo preparado para no tener que instalar ninguna librería.
 <br><br>
 <h1>Arduino IDE</h1>
 Todo el proyecto es compatible con la estructura de Arduino 1.8.11.
-Tan sólo tenemos que abrir el <b>fairChild.ino</b> del directorio <b>fairChild</b>.
+Tan sólo tenemos que abrir el <b>fake86.ino</b> del directorio <b>fake86</b>.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewArduinoIDEpreferences.gif'></center>
 Para el modo normal, ya está preparado el proyecto, de forma que no se necesita ninguna librería. 
 Debemos desactivar la opción de PSRAM, y en caso de superar 1 MB de binario, seleccionar 4 MB de partición a la hora de subir. Aunque el código no use PSRAM, si la opción está activa y nuestro ESP32 no dispone de ella, se generará una excepción y reinicio del mismo en modo bucle.
