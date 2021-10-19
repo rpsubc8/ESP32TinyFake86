@@ -23,7 +23,7 @@ I have made several modifications:
  <li>Support video mode 4 and 5, 320x200 2bpp</li>
  <li>Mode video support 4 and 5, 320x200 2bpp</li>
  <li>Video mode 6, 640x200 1bpp</li> <li>Support video mode 6, 640x200 1bpp</li>
- <li>Soporte modo texto 160x100 (Paku Paku)</li>
+ <li>Text mode support 160x100 (Paku Paku)</li>
  <li>Since only SRAM is used, for this test version only 160 KB (163840 bytes) have been left for emulation.</li>
  <li>The OSD can be removed by pressing the <b>F12</b></li>
 </ul> 
