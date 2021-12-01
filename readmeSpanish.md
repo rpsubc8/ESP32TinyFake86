@@ -87,3 +87,8 @@ Si no se pulsa, se procederá al arranque del BOOTSTRAP, es decir, del disquete.
 Cuando un juego nos vaya muy rápido, podemos reducir la velocidad desde el OSD, cambiando el timer poll en milisegundos y añadiendo un delay CPU en milisegundos.
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/previewDigger.gif'></center>
 
+
+<br><br>
+<h1>DIY circuito</h1>
+Si no queremos usar una placa TTGO VGA32 v1.x, podemos construirla siguiendo el esquema de <b>fabgl</b>:
+<center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/fabglcircuit.gif'></center>
