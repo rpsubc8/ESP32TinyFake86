@@ -2,7 +2,7 @@
  #define FONT_ASCIIVGA_H
  //asciivga 32768 bytes asciivga.dat
  
- #include "..\..\gbGlobals.h"
+ #include "../../gbGlobals.h"
  
  #define gb_size_fon_asciivga 32768
 //const unsigned char gb_font_asciivga[]={
