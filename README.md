@@ -8,7 +8,8 @@ Port Fake86 to TTGO VGA32
  <li><a href='https://retrowiki.es/viewforum.php?f=114'><b>Forum: </b>https://retrowiki.es/viewforum.php?f=114</a></li>
 </ul>
 
-<h1>Documentacion (Help)</h1>
+<br><br>
+<h1>Documentation (Help)</h1>
 <ul>
  <li><a href='readmeEnglish.md'>English Doc</a></li>
  <li><a href='readmeSpanish.md'>Spanish Doc</a></li>
