@@ -2,6 +2,7 @@
 #ifndef VGA_6BIT_H_FILE
 #define VGA_6BIT_H_FILE
 
+#include "gbConfig.h"
 #include <cstdint>
 
 //JJ class VgaMode;

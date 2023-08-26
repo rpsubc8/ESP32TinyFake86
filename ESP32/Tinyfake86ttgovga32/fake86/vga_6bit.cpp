@@ -63,7 +63,7 @@
 //
 // =====================================================================
  
-
+#include "gbConfig.h"
 #include <esp_heap_caps.h>
 #include <soc/rtc.h>
 #include <soc/i2s_reg.h>
@@ -343,11 +343,16 @@ static void IRAM_ATTR i2s_isr(void *arg)
 static void setup_i2s_output(const unsigned char *pin_map)
 {
   periph_module_enable(PERIPH_I2S1_MODULE);
-  for (int i = 0; i < 8; i++) {
-    int pin = pin_map[i];
+  //for (int i = 0; i < 8; i++) 
+  for (unsigned char i = 0; i < 8; i++) 
+  {   
+   unsigned char pin = pin_map[i];
+   if (pin != 255)
+   {//Si es 255 se salta. DAC 8 colores
     PIN_FUNC_SELECT(GPIO_PIN_MUX_REG[pin], PIN_FUNC_GPIO);
     gpio_set_direction((gpio_num_t) pin, (gpio_mode_t) GPIO_MODE_DEF_OUTPUT);
     gpio_matrix_out(pin, I2S1O_DATA_OUT0_IDX + i, false, false);
+   }
   }
   periph_module_enable(PERIPH_I2S1_MODULE);
 
@@ -365,18 +370,86 @@ static void setup_i2s_output(const unsigned char *pin_map)
   // data rate
   I2S1.sample_rate_conf.val = 0;
   I2S1.sample_rate_conf.tx_bits_mod = 8;
-  
+    
   // clock setup
-  long freq = pixel_clock * 2;
-  int sdm, sdmn;
-  int odir = -1;
-  do {	
+  #ifdef use_lib_fix_double_precision
+   #ifdef use_lib_vga320x200x70hz_bitluni
+    //sdm:0x9D8A3 odir:0x0009
+    //(sdm & 0xff):0x00A3 (sdm >> 8):0x00D8 (sdm >> 16):0x0009    
+    unsigned int p0= 0x00A3;
+    unsigned int p1= 0x00D8;
+    unsigned int p2= 0x0009;
+    unsigned int p3= 0x0009;
+
+    //Datos fabgl 320x200 75 Hz freq:12930000 Da fuera de rango
+    //p0=0x000E;
+    //p1=0x000D;
+    //p2=0x0005;
+    //p3=0x0005;
+    //Datos fabgl 320x200 70Hz freq:12587500 funciona
+    //p0=0x00AE;
+    //p1=0x00CF;
+    //p2=0x0004;
+    //p3=0x0005;
+    //Datos fabgl 320x200@60HzD 60Hz freq:25175000 fuera de rango
+    //p0=0x00EB;
+    //p1=0x0011;
+    //p2=0x0006;
+    //p3=0x0002;
+   #else
+    #ifdef use_lib_vga320x200x70hz_fabgl
+     unsigned int p0= 0x00AE;
+     unsigned int p1= 0x00CF;
+     unsigned int p2= 0x0004;
+     unsigned int p3= 0x0005;
+    #endif
+   #endif
+   
+
+   #ifdef use_lib_debug_i2s
+    Serial.printf("bitluni pixel_clock:%d\r\n",pixel_clock);
+    Serial.printf("bitluni p0:0x%04X p1:0x%04X p2:0x%04X p3:0x%04X \r\n",p0,p1,p2,p3);
+   #endif
+
+   rtc_clk_apll_enable(true, p0, p1, p2, p3);
+   //Hay que revisar el swgenerator.cpp - play - setupClock si se usa sonido
+   //Prepara rtc_clk_apll_enable con precision doble, pero no se usa
+  #else
+   long freq = pixel_clock * 2;
+   int sdm, sdmn;
+   int odir = -1;
+   do {	
     odir++;
     sdm  = long((double(freq) / (20000000. / (odir + 2    ))) * 0x10000) - 0x40000;
     sdmn = long((double(freq) / (20000000. / (odir + 2 + 1))) * 0x10000) - 0x40000;
-  } while(sdm < 0x8c0ecL && odir < 31 && sdmn < 0xA1fff);
-  if (sdm > 0xA1fff) sdm = 0xA1fff;
-  rtc_clk_apll_enable(true, sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16, odir);
+   } while(sdm < 0x8c0ecL && odir < 31 && sdmn < 0xA1fff);
+   if (sdm > 0xA1fff) sdm = 0xA1fff;
+
+   #ifdef use_lib_debug_i2s
+    Serial.printf("bitluni freq:%ld pixel_clock:%d\r\n",freq,pixel_clock);
+    Serial.printf("bitluni sdm:0x%04X odir:0x%04X\r\n",sdm,odir);
+    Serial.printf("bitluni (sdm & 0xff):0x%04X (sdm >> 8):0x%04X (sdm >> 16):0x%04X\r\n",sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16);      
+   #endif
+
+   rtc_clk_apll_enable(true, sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16, odir);
+  #endif
+
+   //320x200  720x400 31.4 Khz 70.0 Hz
+   //freq:25175000 pixel_clock:12587500
+   //sdm:0x9D8A3 odir:0x0009
+   //(sdm & 0xff):0x00A3 (sdm >> 8):0x00D8 (sdm >> 16):0x0009
+   //
+   //320x240  640x480 31.4 Khz 60 Hz
+   //freq:25175000 pixel_clock:12587500
+   //sdm:0x9D8A3 odir:0x0009
+   //(sdm & 0xff):0x00A3 (sdm >> 8):0x00D8 (sdm >> 16):0x0009   
+   //
+   //360x200 720x400 31.3 Khz 70.3 Hz
+   //freq:28322000 pixel_clock:14161000
+   //sdm:0x8BEB1 odir:0x0007
+   //(sdm & 0xff):0x00B1 (sdm >> 8):0x00BE (sdm >> 16):0x0008
+   
+  //rtc_clk_apll_enable(true, sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16, odir);
 
   I2S1.clkm_conf.val = 0;
   I2S1.clkm_conf.clka_en = 1;

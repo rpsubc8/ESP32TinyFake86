@@ -4,6 +4,20 @@
  #define true 1
  #define false 0
 
+ //Video mode selection
+ //Select one mode and deselect other modes
+ //320x200 720x400 31.4 Khz 70.0 Hz freq:25175000 pixel_clock:12587500
+ #define use_lib_vga320x200x70hz_bitluni
+ //320x200 70Hz freq:12587500 Solves PLL and VGA monitor problems 
+ //#define use_lib_vga320x200x70hz_fabgl
+
+ //Not use double numbers (IEEE not fpu) calculate vga frequency
+ //#define use_lib_fix_double_precision 
+
+ //Debug i2s bitluni vga frequency
+ //#define use_lib_debug_i2s 
+
+ 
  //Cuando uso capturadora usb
  //#define use_lib_capture_usb
  
@@ -137,9 +151,9 @@
  #define use_lib_320x200
 
  //Logs
- //#define use_lib_log_serial
+ #define use_lib_log_serial
  
- //#define use_lib_bitluni_fast
+ #define use_lib_bitluni_fast
 
  //#define use_lib_bitluni_3bpp
  
@@ -155,4 +169,19 @@
  // #define gb_add_offset_x 60 
  // #define gb_add_offset_y 40
  //#endif
+
+
+ #ifdef use_lib_vga320x200x70hz_bitluni
+  #define use_lib_vga320x200
+ #else
+  #ifdef use_lib_vga320x200x70hz_fabgl
+   #define use_lib_vga320x200
+   #ifndef use_lib_fix_double_precision
+    #define use_lib_fix_double_precision
+   #endif 
+  #endif
+ #endif
+
+
+
 #endif
