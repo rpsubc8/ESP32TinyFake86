@@ -116,6 +116,7 @@ He creado una herramienta muy básica, para convertir los archivos (.com, .ima, 
    dsk/   
    font/
    rom/
+   snarare/
 </pre>
 Posteriormente debemos copiar el directorio <b>dataFlash</b> en el proyecto <b>ESP32TinyFake86\fake86</b> sobreescribiendo la carpeta dataFlash previa. Se recomienda limpiar el proyecto y volver a compilar.<br>
 Esta herramienta es muy simple, y no controla los errores, por lo que se recomienda dejarle los archivos con nombres muy simples y lo más sencillo posible.<br><br>
