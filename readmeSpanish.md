@@ -23,6 +23,7 @@ He realizado varias modificaciones:
  <li>Soporte modo texto 160x100 (Paku Paku)</li>
  <li>Al usar sólo SRAM, para esta versión de test se ha dejado sólo emular 160 KB (163840 bytes)</li>
  <li>El OSD se saca con la tecla <b>F12</b></li>
+ <li>Tool <b>ima2h</b> para generar lista de discos y .COM</li>
 </ul> 
 
 
@@ -117,9 +118,10 @@ He creado una herramienta muy básica, para convertir los archivos (.com, .ima, 
    rom/
 </pre>
 Posteriormente debemos copiar el directorio <b>dataFlash</b> en el proyecto <b>ESP32TinyFake86\fake86</b> sobreescribiendo la carpeta dataFlash previa. Se recomienda limpiar el proyecto y volver a compilar.<br>
-Esta herramienta es muy simple, y no controla los errores, por lo que se recomienda dejarle los archivos con nombres muy simples y lo más sencillo posible.<br>
-Las imágenes de los discos tienen que ser de 40 pistas, 2 caras, 9 sectores y 512 bytes por sector, es decir, 368640 bytes. Acepta .ima, .img y similar.<br>
-Los archivos .COM no deben superar los 64 KB.<br>
+Esta herramienta es muy simple, y no controla los errores, por lo que se recomienda dejarle los archivos con nombres muy simples y lo más sencillo posible.<br><br>
+Las imágenes de los discos tienen que ser de 40 pistas, 2 caras, 9 sectores y 512 bytes por sector, es decir, 368640 bytes. Acepta .ima, .img y similar.<br><br>
+Los archivos .COM no deben superar los 64 KB.<br><br>
+Lo que podemos variar, son las imágenes de disco y los ejecutables .COM, pero sin borrar el digger.com (se necesita para el proyecto).<br><br>
 El proyecto en PLATFORM.IO está preparado para 2 MB de Flash. Si necesitamos los 4MB de flash, tendremos que modificar la entrada del archivo <b>platformio.ini</b>
 <pre>board_build.partitions = huge_app.csv</pre>
 En el Arduino IDE, debemos elegir la opción <b>Partition Scheme (Huge APP)</b>.
