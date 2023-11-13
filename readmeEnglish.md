@@ -26,6 +26,7 @@ I have made several modifications:
  <li>Text mode support 160x100 (Paku Paku)</li>
  <li>Since only SRAM is used, for this test version only 160 KB (163840 bytes) have been left for emulation.</li>
  <li>The OSD can be removed by pressing the <b>F12</b></li>
+ <li>Tool <b>ima2h</b> para generar lista de discos y .COM</li>
 </ul> 
 
 
@@ -94,3 +95,36 @@ When a game is running too fast, we can reduce the speed from the OSD by changin
 <h1>DIY circuit</h1>
 If we don't want to use a TTGO VGA32 v1.x board, we can build it following the <b>fabgl</b>:
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyMCUMEesp81/main/preview/fabglcircuit.gif'></center>
+
+
+<br><br>
+<h1>Tool ima2h</h1>
+I have created a very basic tool, to convert the files (.com, .ima, .bin) into .h, to be processed by the emulator. We just have to leave the files (.ima, .img) in the folder <b>dsk</b>, .com in <b>com</b> and run the file <b>ima2h.exe</b>, so that an output will be generated in the directory <b>dataFlash</b>. It is also recommended to delete the files in the <b>fake86\dataFlash</b> to have a clean project.<br><br>
+<a href='https://github.com/rpsubc8/ESP32TinyFake86/tree/main/tools/ima2h'>Tool ima2h</a>
+<br><br>
+<pre>
+ input/
+  bios/biospcxt.bin
+  com/
+  dsk/
+  font/fontasciivga.dat
+  rom/rombasic.bin
+      videorom.bin
+  snarare/
+ output/ 
+  dataFlash/
+   bios/
+   com/
+   dsk/   
+   font/
+   rom/
+   snarare/
+</pre>
+We must then copy the directory <b>dataFlash</b> in the project <b>ESP32TinyFake86\fake86</b> overwriting the previous dataFlash folder. It is recommended to clean up the project and recompile.<br>
+This tool is very simple, and does not control errors, so it is recommended to leave the files with very simple names and as simple as possible.<br><br>
+Disk images have to be 40 tracks, 2 sides, 9 sectors and 512 bytes per sector, i.e. 368640 bytes. Accepts .ima, .img and similar.<br><br>
+COM files must be no larger than 64 KB..<br><br>
+What we can vary, are the disk images and the .COM executables, but without deleting the digger.com (needed for the project).<br><br>
+The project in PLATFORM.IO is prepared for 2MB of Flash. If we need the 4MB of flash, we will have to modify the entry of the file <b>platformio.ini</b>
+<pre>board_build.partitions = huge_app.csv</pre>
+In the Arduino IDE, we must choose the option <b>Partition Scheme (Huge APP)</b>.
