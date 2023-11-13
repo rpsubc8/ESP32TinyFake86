@@ -92,3 +92,34 @@ Cuando un juego nos vaya muy rápido, podemos reducir la velocidad desde el OSD,
 <h1>DIY circuito</h1>
 Si no queremos usar una placa TTGO VGA32 v1.x, podemos construirla siguiendo el esquema de <b>fabgl</b>:
 <center><img src='https://raw.githubusercontent.com/rpsubc8/ESP32TinyFake86/main/preview/fabglcircuit.gif'></center>
+
+
+<br><br>
+<h1>Tool ima2h</h1>
+He creado una herramienta muy básica, para convertir los archivos (.com, .ima, .bin) en .h, para ser procesados por el emulador. Tan sólo tenemos que dejar los archivos (.ima, .img) en la carpeta <b>dsk</b>, .com en <b>com</b> y ejecutar el archivo <b>ima2h.exe</b>, de forma que se generará una salida en el directorio <b>dataFlash</b>. También se recomienda borrar los archivos del directorio <b>fake86\dataFlash</b> para tener un proyecto limpio.<br><br>
+<a href='https://github.com/rpsubc8/ESP32TinyFake86/tree/main/tools/ima2h'>Tool ima2h</a>
+<br><br>
+<pre>
+ input/
+  bios/biospcxt.bin
+  com/
+  dsk/
+  font/fontasciivga.dat
+  rom/rombasic.bin
+      videorom.bin
+  snarare/
+ output/ 
+  dataFlash/
+   bios/
+   com/
+   dsk/   
+   font/
+   rom/
+</pre>
+Posteriormente debemos copiar el directorio <b>dataFlash</b> en el proyecto <b>ESP32TinyFake86\fake86</b> sobreescribiendo la carpeta dataFlash previa. Se recomienda limpiar el proyecto y volver a compilar.<br>
+Esta herramienta es muy simple, y no controla los errores, por lo que se recomienda dejarle los archivos con nombres muy simples y lo más sencillo posible.<br>
+Las imágenes de los discos tienen que ser de 40 pistas, 2 caras, 9 sectores y 512 bytes por sector, es decir, 368640 bytes. Acepta .ima, .img y similar.<br>
+Los archivos .COM no deben superar los 64 KB.<br>
+El proyecto en PLATFORM.IO está preparado para 2 MB de Flash. Si necesitamos los 4MB de flash, tendremos que modificar la entrada del archivo <b>platformio.ini</b>
+<pre>board_build.partitions = huge_app.csv</pre>
+En el Arduino IDE, debemos elegir la opción <b>Partition Scheme (Huge APP)</b>.
