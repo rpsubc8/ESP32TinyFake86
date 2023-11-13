@@ -26,7 +26,7 @@ I have made several modifications:
  <li>Text mode support 160x100 (Paku Paku)</li>
  <li>Since only SRAM is used, for this test version only 160 KB (163840 bytes) have been left for emulation.</li>
  <li>The OSD can be removed by pressing the <b>F12</b></li>
- <li>Tool <b>ima2h</b> para generar lista de discos y .COM</li>
+ <li>Tool <b>ima2h</b> to generate list of discs and .COM</li>
 </ul> 
 
 
